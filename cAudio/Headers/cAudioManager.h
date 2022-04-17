@@ -107,8 +107,8 @@ namespace cAudio
 		float MasterVolume;
 
 		//! Holds an index for fast searching of audio sources by name
-		cAudioMap<cAudioString, IAudioSource*>::Type audioIndex;
-		typedef cAudioMap<cAudioString, IAudioSource*>::Type::iterator audioIndexIterator;
+		cAudioMap<const cAudioString, IAudioSource*>::Type audioIndex;
+		typedef cAudioMap<const cAudioString, IAudioSource*>::Type::iterator audioIndexIterator;
 		//! Holds all managed audio sources
 		cAudioVector<IAudioSource*>::Type audioSources;
         cAudioVector<IAudioSource*>::Type updateSources;
@@ -117,11 +117,11 @@ namespace cAudio
 		//! Holds audio sources which gets deleted from the audioManager
 		cAudioVector<IAudioSource*>::Type managedAudioSourcesDelBuffer;
 		//! Decoder map that holds all decoders by file extension
-		cAudioMap<cAudioString, IAudioDecoderFactory*>::Type decodermap;
-		typedef cAudioMap<cAudioString, IAudioDecoderFactory*>::Type::iterator decodermapIterator;
+		cAudioMap<const cAudioString, IAudioDecoderFactory*>::Type decodermap;
+		typedef cAudioMap<const cAudioString, IAudioDecoderFactory*>::Type::iterator decodermapIterator;
 		//! Archive map that holds all datasource types
-		cAudioMap<cAudioString, IDataSourceFactory*>::Type datasourcemap;
-		typedef cAudioMap<cAudioString, IDataSourceFactory*>::Type::iterator datasourcemapIterator;
+		cAudioMap<const cAudioString, IDataSourceFactory*>::Type datasourcemap;
+		typedef cAudioMap<const cAudioString, IDataSourceFactory*>::Type::iterator datasourcemapIterator;
 		cAudioVector< std::pair<int, cAudioString> >::Type dataSourcePriorityList;
 
 		//! The listener object        

@@ -39,8 +39,8 @@ namespace cAudio
 		unsigned long StartTime;
 		char TempTextBuf[2048];
 		LogLevel MinLogLevel;
-		cAudioMap<cAudioString, ILogReceiver*>::Type Receivers;
-		typedef cAudioMap<cAudioString, ILogReceiver*>::Type::iterator ReceiversIterator;
+		cAudioMap<const cAudioString, ILogReceiver*>::Type Receivers;
+		typedef cAudioMap<const cAudioString, ILogReceiver*>::Type::iterator ReceiversIterator;
 	private:
     };
 };
