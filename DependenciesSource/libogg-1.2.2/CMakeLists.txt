@@ -12,9 +12,8 @@ include(libogg_src_files)
 add_library(Ogg STATIC ${file_root})
 target_link_libraries(Ogg)
 
-if(UNIX AND CMAKE_SIZEOF_VOID_P EQUAL 8)
-	set_target_properties( Ogg PROPERTIES COMPILE_FLAGS -fPIC)
-endif()
+set_property(TARGET Ogg PROPERTY POSITION_INDEPENDENT_CODE ON)
+#set_target_properties( Ogg PROPERTIES COMPILE_FLAGS -fPIC)
 
 if (APPLE AND CAUDIO_IOS_BUILD)
 	set_target_properties(Ogg PROPERTIES XCODE_ATTRIBUTE_GCC_THUMB_SUPPORT "NO")

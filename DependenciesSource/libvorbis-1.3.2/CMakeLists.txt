@@ -12,9 +12,8 @@ include(libvorbis_src_files)
 add_library(Vorbis STATIC ${file_root})
 target_link_libraries(Vorbis Ogg)
 
-if(UNIX AND CMAKE_SIZEOF_VOID_P EQUAL 8)
-	set_target_properties( Vorbis PROPERTIES COMPILE_FLAGS -fPIC)
-endif()
+set_property(TARGET Vorbis PROPERTY POSITION_INDEPENDENT_CODE ON)
+#set_target_properties( Vorbis PROPERTIES COMPILE_FLAGS -fPIC)
 
 add_dependencies(Vorbis Ogg)
 
